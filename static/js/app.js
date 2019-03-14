@@ -6,6 +6,11 @@ var tableData = data;
 // Add sightings data to page.
 function insertTable(inputData) {
     
+    // If no data is passed in, use the whole table.
+    if (inputData == null) {
+        inputData = data;
+    };
+
     // Check whether inputData is empty.
     if (inputData.length == 0) {
         tbody.text("Search criteria not found.");
@@ -81,3 +86,9 @@ function filterTable(event) {
 // Attach an event to detect changes to the input field.
 var filterBtn = d3.select("#filter-btn");
 filterBtn.on("click", filterTable);
+
+var resetBtn = d3.select("#reset-btn");
+resetBtn.on("click", insertTable);
+
+//Initiate the table
+insertTable();
