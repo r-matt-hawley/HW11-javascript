@@ -32,6 +32,10 @@ function removeTable() {
     tbody.text("");
 }
 
+function resetTable () {
+    removeTable();
+    insertTable();
+}
 // Level 1 homework.
 /*
 function filterTable(event) {
@@ -88,7 +92,7 @@ var filterBtn = d3.select("#filter-btn");
 filterBtn.on("click", filterTable);
 
 var resetBtn = d3.select("#reset-btn");
-resetBtn.on("click", insertTable);
+resetBtn.on("click", resetTable);
 
 //Initiate the table
 insertTable();
